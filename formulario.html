@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validación Formularios</title>
+  <!--<link rel="stylesheet" href="style.css">-->
+</head>
+
+<body>
+  <form action="index.html" method="post">
+    <p>
+      Todos los campos son obligatorios, el formulario solo se puede enviar cuado se cumplan todas las condiciones.
+    </p>
+    <p>
+      los campos son demostrativos, el aprendiz debe modificar el html para su correcto funcionamiento, es decir
+      modificar
+      los atributos o las mismas etiquetas.
+    </p>
+
+    <hr>
+    <!-- Campo solo letras mayusculas y minusculas -->
+    <div>
+      <h2>NOMBRE </h2>
+      <div>
+        <label for="Nombre">Ingrese su Nombre</label>
+      </div>
+      <input type="text" id="Nombre" pattern="[A-Za-z]+" required>
+
+    </div>
+
+    <hr>
+
+    <!-- Campo solo letras minusculas -->
+    <div>
+      <h2>Apellido</h2>
+      <div>
+        <label for="apellido">Ingrese su apellido</label>
+        <input type="text" name="apellido" id="apellido" pattern="[a-z]+" required>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Campo solo color -->
+    <div>
+      <h2>COLOR</h2>
+      <div>
+        <label for="color">Color favorito </label>
+        <input type="color" name="Color" id="Color" placeholder="Color" required>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Campo solo números -->
+    <div>
+      <H2> EDAD</H2>
+      <div>
+        <label for="edad">Ingrese su Edad</label>
+        <input type="number" name="numero" id="edad" min="0" max="100" required>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Campo solo números mediante modificación -->
+    <div>
+      <h2>NUMERO</h2>
+      <div>
+        <label for="numeros">Ingrese su Número</label>
+        <input type="text" id="numeros" pattern="\d+" required>
+
+      </div>
+    </div>
+
+    <hr>
+    <!-- Validar que el usuario solo pueda ingresar números positivos -->
+
+    <div>
+      <h2> NUMERO POSITIVO</h2>
+      <div>
+        <label for="positivos">Ingrese los Numeros positivos</label>
+        <input type="number" name="Numeros positivos" id="Numeros positivos" placeholder="Positivos" min="0" required>
+      </div>
+    </div>
+    <!-- El usuario podra incrematar de 0.5 en 0.5 y solo podra incremantar hasta 20, igualmente no podra decrementar menos de 10 y al iniciar el formulario iniciar con 15 -->
+
+    <hr>
+
+    <div>
+      <h2>NUMERO MAXIMO Y MINIMO</h2>
+      <div>
+        <div>
+          <label for="maximo_minimo">Ingrese el maximo-minimo</label>
+          <input type="number" name="Positivos" id="maximo_minimo" value="15" step="0.5" min="10" max="20" required>
+        </div>
+      </div>
+      </di>
+
+
+      <hr>
+      <!-- El usuario podra seleccionar la fecha de nacimiento -->
+
+      <div>
+        <H2>FECHA NACIMIENTO </H2>
+        <div>
+          <label for="fecha_nacimiento">Ingrese su Fecha nacimiento</label>
+          <input type="date" name="Fecha" id="fecha_nacimiento" required>
+        </div>
+      </div>
+
+
+      <hr>
+      <!-- El usuario podra seleccionar la hora de registro -->
+      <div>
+        <h2>HORA</h2>
+        <div>
+          <label for="hora">Ingrese la hora en que se diligencia </label>
+          <input type="time" name="Hora" id="hora" required>
+        </div>
+
+      </div>
+
+
+      <hr>
+      <!-- El usuario podra seleccionar la su ciudad -->
+
+      <div>
+        <h2>CIUDAD </h2>
+        <div>
+          <label for="ciudad"> Seleccione la Ciudad de residencia </label>
+          <select name="Ciudad" id="ciudad" required>
+            <option value="">seleccione</option>
+            <option value="1">Bucaramanga</option>
+            <option value="2">Giron</option>
+            <option value="3">Floridablanca</option>
+            <option value="4">Piedecuesta</option>
+          </select>
+        </div>
+
+      </div>
+
+      <hr>
+      <!-- El usuario podra seleccionar su genero y solo podra selecciona un unico genero (Masculino, Femenino , Otro) -->
+      <div>
+        <h2>GENERO </h2>
+        <div>
+          <label for="genero">Seleccione su genero</label>
+          <select name="genero" id="genero" required>
+            <option value="">seleccione</option>
+            <option value="1">Masculino</option>
+            <option value="2">Femenino</option>
+            <option value="3">Otro</option>
+            <option value="4">Prefieron no decirlo</option>
+          </select>
+        </div>
+      </div>
+
+      <hr>
+      <!-- El usuario podra seleccionar varias materias, (HTML, CSS, JS, JAVA, PYTHON, PHP) este campo es opcional es decir se debe trasnformar pero no es obligatorio estar seleccionada alguna materia -->
+      <div>
+        <h2>MATERIAS </h2>
+        <div>
+          <label for="materias">Seleccione sus Materias</label>
+          <P>
+            <input type="radio" id="materias" required> HTML
+            <input type="radio" id="materias" required> CSS
+            <input type="radio" id="materias" required> JS
+            <input type="radio" id="materias" required> JAVA
+            <input type="radio" id="materias" required> PYTHON
+            <input type="radio" id="materias" required> PHP
+        </div>
+      </div>
+
+
+      <hr>
+      <!-- El usuario podra seleccionar varias imagenes pero el formato valido es .jpg y .png -->
+      <div>
+        <h2>IMAGENES </h2>
+        <div>
+          <label for="imagen">Seleccione el Archivo de las imagenes </label>
+          <input type="file" name="Imagen" id="imagen" accept=".jpg, .png" multiple required>
+        </div>
+
+      </div>
+
+
+
+      <hr>
+      <!-- El usuario podra ingresar su contraseña -->
+      <div>
+        <h2>CONTRASEÑA</h2>
+        <div>
+          <label for="contrasena">Ingrese su contraseña</label>
+          <input type="password" name="contraseña" id="contrasena" required>
+        </div>
+      </div>
+
+      <hr>
+      <!-- Campo para que el aprendiz ingrese su nombre, este campo debe ser de solo lectura, es decir debe estar bloqueado, es decir debe estar bloqueado y al iniciar el formulario debe estar lleno con el nombre del aprendiz -->
+      <div>
+        <div>
+          <h2>Aprendiz </h2>
+          <label for="aprendiz">Nombre del aprendiz</label>
+          <input type="text" id="aprendiz" value="Eileen Julieth Mendoza Landinez" disabled required>
+        </div>
+      </div>
+
+      <div>
+        <button type="submit">Validar formulario</button>
+      </div>
+      <div>
+        <span>
+          Felicidades, llegamos al final del formulario, eso quiere decir que ya entendimos la actividad.
+        </span>
+      </div>
+  </form>
+</body>
+
+</html>
